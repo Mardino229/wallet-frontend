@@ -17,7 +17,11 @@ export const useTransactions = (userId: string|undefined) => {
     
     const fetchTransactions = useCallback(async () => {
         try {
-            const response = await fetch(`${API_URL}/transactions/${userId}`, {})
+            const response = await fetch(`${API_URL}/transactions/${userId}`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            })
             const data = await response.json();
             setTransactions(data.transactions);
         } catch (e) {
@@ -27,7 +31,9 @@ export const useTransactions = (userId: string|undefined) => {
 
     const fetchSummary = useCallback(async () => {
         try {
-            const response = await fetch(`${API_URL}/transactions/summary/${userId}`, {})
+            const response = await fetch(`${API_URL}/transactions/summary/${userId}`, {headers: {
+                "Content-Type": "application/json",
+            },})
             const data = await response.json();
             setSummary(data);
         } catch (e) {

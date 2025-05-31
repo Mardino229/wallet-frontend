@@ -6,9 +6,8 @@ import {Redirect} from "expo-router";
 export default function Layout() {
     const {isSignedIn , isLoaded} = useUser();
 
-    if (isLoaded) return null;
-
-    if (isSignedIn) {
+   
+    if (!isSignedIn) {
         return <Redirect href="/sign-in" />;
     }
 

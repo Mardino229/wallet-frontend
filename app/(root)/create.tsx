@@ -3,7 +3,7 @@ import { useUser } from "@clerk/clerk-expo";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { View, Text, Alert, TouchableOpacity, TextInput, ActivityIndicatorBase, ActivityIndicator } from "react-native";
-import { Error } from "./(auth)/sign-in";
+import { Error } from "../(auth)/sign-in";
 import { styles } from "@/assets/styles/create.styles";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { COLORS } from "@/constants/colors";
@@ -70,7 +70,7 @@ const CreateScreen = () => {
 
 
     } finally {
-        () => router.back()
+        router.back()
         }
     }   
   

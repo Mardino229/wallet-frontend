@@ -1,11 +1,9 @@
-
 import { SignedIn, SignedOut, useUser } from '@clerk/clerk-expo'
 import { Link, useRouter } from 'expo-router'
 import {Text, View, Image, TouchableOpacity, FlatList, Alert, RefreshControl} from 'react-native'
 import { SignOutButton } from '@/components/SignOutButton'
 import {useTransactions} from "@/hooks/useTransactions";
 import {useEffect, useState} from "react";
-import slugify from "slugify";
 import PageLoader from "@/components/PageLoader";
 import {styles} from "@/assets/styles/home.styles";
 import {Ionicons} from "@expo/vector-icons";
@@ -46,7 +44,7 @@ export default function Page() {
             <View style={styles.content}>
                 <View style={styles.header}>
                     <View style={styles.headerLeft}>
-                        <Image resizeMode="contain" style={styles.headerLogo} source={require('../assets/images/logo.png')} />
+                        <Image resizeMode="contain" style={styles.headerLogo} source={require('../../assets/images/logo.png')} />
                         <View style={styles.welcomeContainer}>
                             <Text style={styles.welcomeText}>Welcome</Text>
                             <Text style={styles.usernameText}>{user?.emailAddresses[0].emailAddress.split("@")[0]} </Text>
